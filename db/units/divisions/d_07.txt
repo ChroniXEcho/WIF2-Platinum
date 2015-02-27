@@ -1,0 +1,234 @@
+# MODEL_0_
+
+allowed_brigades =  artillery
+allowed_brigades =  super_heavy_artillery
+allowed_brigades =  medium_armor		
+allowed_brigades =  anti_air		
+allowed_brigades =  cavalry_brigade
+allowed_brigades =  tank_destroyer
+allowed_brigades =  light_armor_brigade
+allowed_brigades =  amph_armor
+allowed_brigades =  heavy_armor	
+allowed_brigades =  super_heavy_armor
+allowed_brigades =  armored_car
+allowed_brigades =  engineer	
+allowed_brigades =  police
+
+max_allowed_brigades = 2
+
+upgrade = { type = garrison upgrade_time_factor 	= 0.32 upgrade_cost_factor 	= 0.29 }
+upgrade = { type = bergsjaeger upgrade_time_factor 	= 0.50 upgrade_cost_factor 	= 0.77 }
+upgrade = { type = paratrooper upgrade_time_factor 	= 0.50 upgrade_cost_factor 	= 1.18 }
+upgrade = { type = marine upgrade_time_factor 	= 0.50 upgrade_cost_factor 	= 1.11 }
+upgrade = { type = cavalry upgrade_time_factor 	= 0.72 upgrade_cost_factor 	= 0.39 }
+upgrade = { type = motorized upgrade_time_factor 	= 0.52 upgrade_cost_factor 	= 1.03 }
+upgrade = { type = mechanized upgrade_time_factor 	= 0.80 upgrade_cost_factor 	= 0.94 }
+
+
+# 10 - Advanced Infantry Division (1939)
+model = {
+	cost 					= 5
+	buildtime	 			= 470
+	manpower 				= 13
+	maxspeed 				= 11
+	defaultorganisation 	= 30
+	morale					= 30
+	defensiveness 			= 35
+	toughness				= 40
+	softness				= 95
+	suppression				= 4
+	airdefence				= 14
+	softattack				= 11
+	hardattack				= 2
+	airattack				= 1
+	transportweight			= 10
+	supplyconsumption 		= 1.1
+	fuelconsumption			= 0.5
+	upgrade_time_factor 	= 0.20 
+	upgrade_cost_factor 	= 0.75
+	reinforce_time			= 0.45
+	reinforce_cost 			= 0.33
+	equipment = { manpower = 13000 trucks = 1137 horses = 4842 artillery = 194 heavy_artillery = 18 anti_tank = 75 anti_air = 12 }
+}
+
+# 11 - Semimodern Infantry Division (1942)
+model = {
+	cost 					= 5
+	buildtime	 			= 470
+	manpower 				= 13
+	maxspeed 				= 11
+	defaultorganisation 	= 30
+	morale					= 30
+	defensiveness 			= 35
+	toughness				= 40
+	softness				= 95
+	suppression				= 4
+	airdefence				= 14
+	softattack				= 13
+	hardattack				= 4
+	airattack				= 2
+	transportweight			= 10
+	supplyconsumption 		= 1.1
+	fuelconsumption			= 0.5
+	upgrade_time_factor 	= 0.20 
+	upgrade_cost_factor 	= 0.75
+	reinforce_time			= 0.45
+	reinforce_cost 			= 0.33
+	equipment = {  manpower = 13000 trucks = 1053 horses = 4640 artillery = 204 heavy_artillery = 24 anti_tank = 45 anti_air = 13 }
+}
+
+# 12 - Modern Infantry Division (1945)
+model = {
+	cost 					= 5
+	buildtime	 			= 470
+	manpower 				= 13
+	maxspeed 				= 11
+	defaultorganisation 	= 30
+	morale					= 30
+	defensiveness 			= 35
+	toughness				= 40
+	softness				= 95
+	suppression				= 5
+	airdefence				= 14
+	softattack				= 13
+	hardattack				= 5
+	airattack				= 3
+	transportweight			= 10
+	supplyconsumption 		= 1.1
+	fuelconsumption			= 0.5
+	upgrade_time_factor 	= 0.20 
+	upgrade_cost_factor 	= 0.75
+	reinforce_time			= 0.45
+	reinforce_cost 			= 0.33
+	equipment = {  manpower = 13000 trucks = 736 horses = 4032 artillery = 82 heavy_artillery = 60 anti_tank = 45 anti_air = 15 }
+}
+
+# 13 - Elite Infantry Division (1948)
+model = {
+	cost 					= 5
+	buildtime	 			= 470
+	manpower 				= 13
+	maxspeed 				= 11
+	defaultorganisation 	= 30
+	morale					= 30
+	defensiveness 			= 35
+	toughness				= 40
+	softness				= 95
+	suppression				= 5
+	airdefence				= 14
+	softattack				= 14
+	hardattack				= 5
+	airattack				= 3
+	transportweight			= 10
+	supplyconsumption 		= 1.1
+	fuelconsumption			= 0.5
+	upgrade_time_factor 	= 0.20 
+	upgrade_cost_factor 	= 0.75
+	reinforce_time			= 0.45
+	reinforce_cost 			= 0.33
+	equipment = { manpower = 13000 trucks = 2000 horses = 2500 artillery = 210 heavy_artillery = 60 anti_tank = 50 anti_air = 25  }
+}
+
+# 14 - Infantry Division (1951)
+model = {
+	cost 					= 5
+	buildtime	 			= 470
+	manpower 				= 13
+	maxspeed 				= 11
+	defaultorganisation 	= 30
+	morale					= 30
+	defensiveness 			= 35
+	toughness				= 40
+	softness				= 95
+	suppression				= 5
+	airdefence				= 14
+	softattack				= 14
+	hardattack				= 6
+	airattack				= 3
+	transportweight			= 10
+	supplyconsumption 		= 1.1
+	fuelconsumption			= 0.5
+	upgrade_time_factor 	= 0.20 
+	upgrade_cost_factor 	= 0.75
+	reinforce_time			= 0.45
+	reinforce_cost 			= 0.33
+	equipment = { manpower = 13000 trucks = 2600 horses = 2000 artillery = 300 heavy_artillery = 100 anti_tank = 60 anti_air = 40 }
+}
+
+# 15 - Elite Infantry Division (1954)
+model = {
+	cost 					= 5
+	buildtime	 			= 470
+	manpower 				= 13
+	maxspeed 				= 11
+	defaultorganisation 	= 30
+	morale					= 30
+	defensiveness 			= 35
+	toughness				= 40
+	softness				= 95
+	suppression				= 6
+	airdefence				= 14
+	softattack				= 14
+	hardattack				= 6
+	airattack				= 4
+	transportweight			= 10
+	supplyconsumption 		= 1.2
+	fuelconsumption			= 1.0
+	upgrade_time_factor 	= 0.20 
+	upgrade_cost_factor 	= 0.75
+	reinforce_time			= 0.45
+	reinforce_cost 			= 0.33
+	equipment = {  manpower = 13000 trucks = 3000 horses = 500 artillery = 280 heavy_artillery = 90 anti_tank = 50 anti_air = 40 }
+}
+
+# 16 - Elite Infantry Division (1958)
+model = {
+	cost 					= 5
+	buildtime	 			= 470
+	manpower 				= 11
+	maxspeed 				= 11
+	defaultorganisation 	= 30
+	morale					= 30
+	defensiveness 			= 35
+	toughness				= 40
+	softness				= 95
+	suppression				= 6
+	airdefence				= 14
+	softattack				= 15
+	hardattack				= 6
+	airattack				= 5
+	transportweight			= 10
+	supplyconsumption 		= 1.2
+	fuelconsumption			= 1.0
+	upgrade_time_factor 	= 0.20 
+	upgrade_cost_factor 	= 0.75
+	reinforce_time			= 0.45
+	reinforce_cost 			= 0.33
+	equipment = { manpower = 11000 trucks = 2800 artillery = 260 heavy_artillery = 80 anti_tank = 45 anti_air = 40 }
+}
+
+# 17 - Elite Infantry Division (1962)
+model = {
+	cost 					= 5
+	buildtime	 			= 470
+	manpower 				= 10
+	maxspeed 				= 11
+	defaultorganisation 	= 30
+	morale					= 30
+	defensiveness 			= 35
+	toughness				= 40
+	softness				= 90
+	suppression				= 6
+	airdefence				= 14
+	softattack				= 16
+	hardattack				= 7
+	airattack				= 5
+	transportweight			= 10
+	supplyconsumption 		= 1.2
+	fuelconsumption			= 1.0
+	upgrade_time_factor 	= 0.20 
+	upgrade_cost_factor 	= 0.75
+	reinforce_time			= 0.45
+	reinforce_cost 			= 0.33
+	equipment = { manpower = 10000 trucks = 2500 artillery = 250 heavy_artillery = 60 anti_tank = 40 anti_air = 40 }
+}
