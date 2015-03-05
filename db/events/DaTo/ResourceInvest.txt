@@ -1,0 +1,404 @@
+#
+# HoI2: Doomsday - Resource Investment + Expansion Events
+#
+#		written by David Bernstein
+#	IDs: 1436-1449
+
+#########################################################################
+#  Yearly Resource Prospecting Investment
+#########################################################################
+event = {
+	id = 90006000
+	random = no
+	persistent = yes
+	
+	date = { day = 1 month = january year = 1930 }
+	offset = 60
+	deathdate = { day = 1 month = january year = 1960 }
+	
+	decision = { 
+	}
+
+	decision_trigger = {
+	}
+	
+	trigger = {
+		year = 1930
+	}
+	
+	name = "Annual Resource Prospecting Allotment"
+	desc = "The budgetary committee is meeting today to determine how much to invest in resource prospecting. With global supplies of critical resources at an all time low diplomatic tensions are rising as competition for resources becomes more fierce. Smart Investments in prospecting could enable us to peacefully expand our Industrial base and further Industrialise our nation without resorting to aggression."
+	picture = "economic"
+	style = 0
+	decision_picture = "decision_ersatz_conversion"
+	
+	action_a = {
+			name = "It is too expensive." #It is too expensive.
+#			command = { type = trigger which = 90006001 }# Instant Benefit
+#			ai_chance = 10
+			command = { }#Needed for option to be valid.
+	}
+	action_b = {
+			name = "We can afford a modest ammount" #We can afford a modest ammount.
+			ai_chance = 50 #Value most AI can afford
+			command = { type = money value = -10 }#Payment for low firing chance.
+			command = { type = local_setflag which = RILOWE }#chance for energy
+			command = { type = local_setflag which = RILOWM }#chance for metal
+			command = { type = local_setflag which = RILOWO }#chance for oil
+			command = { type = local_setflag which = RILOWR }#chance for rare material
+	}
+	action_c = {
+			name = "Invest at the recommended levels." #Invest at the recommended levels.
+			ai_chance = 25 #This could hurt the weaker AI's in research
+			command = { type = money value = -100 }#Payment for mod firing chance.
+			command = { type = local_setflag which = RIMEDE }#chance for energy
+			command = { type = local_setflag which = RIMEDM }#chance for metal
+			command = { type = local_setflag which = RIMEDO }#chance for oil
+			command = { type = local_setflag which = RIMEDR }#chance for rare material
+	}
+	action_d = {
+			name = "We need resources no matter the cost" #We need resources no matter the cost!
+			ai_chance = 15 #
+			command = { type = money value = -500 }#Payment for Hi firing chance.
+			command = { type = local_setflag which = RIHIE }#chance for energy
+			command = { type = local_setflag which = RIHIM }#chance for metal
+			command = { type = local_setflag which = RIHIO }#chance for oil
+			command = { type = local_setflag which = RIHIR }#chance for rare material
+			command = { type = trigger which = 90006001 }# Instant Benefit
+	}
+}
+
+#########################################################################
+#  Immediate resource increase
+#########################################################################
+event = {
+	id = 90006001
+	random = no
+	persistent = yes
+	#Triggered by event 1436D
+	name = "Instant productivity increase"
+	desc = "Throwing such a large volume of money at resource production led to an instant increase in efficiency as current producers simply expanded existing harvesting facilities."
+	picture = "economic"
+	style = 2
+	action_a = {
+			name = "Great"
+			command = { type = add_prov_resource which = -1 value = 10 where = energy }
+			command = { type = add_prov_resource which = -1 value = 5 where = metal }
+			command = { type = add_prov_resource which = -1 value = 5 where = oil }
+			command = { type = add_prov_resource which = -1 value = 2.5 where = rare_materials }
+#			command = { type = add_prov_resource which = -1 value = 10 where = oil }  # -1 is random owned province, -4 is province with nuclear reactor.
+			command = { } 
+	}
+}
+
+#########################################################################
+#  Lo probability Energy Increase
+#########################################################################
+event = {
+	id = 90006002
+	random = no
+	persistent = yes
+	date = { day = 1 month = january year = 1930 }
+	offset = 7
+	deathdate = { day = 1 month = january year = 1960 }
+	trigger = {
+		local_flag = RILOWE
+		random = 5
+	}
+	name = "Lo probability Energy Increase"
+	desc = "Lo probability Energy Increase"
+	picture = "economic"
+	style = 2
+	action_a = {
+			name = "Great!"
+			command = { type = add_prov_resource which = -1 value = 10 where = energy }
+			command = { type = local_clrflag which = RILOWE }#Must Re-invest
+			command = { }
+	}
+}
+
+#########################################################################
+#  Lo probability Metal Increase
+#########################################################################
+event = {
+	id = 90006003
+	random = no
+	persistent = yes
+	date = { day = 1 month = january year = 1930 }
+	offset = 7
+	deathdate = { day = 1 month = january year = 1960 }
+	trigger = {
+		local_flag = RILOWM
+		random = 5
+	}
+	name = "Lo probability Metal Increase"
+	desc = "Lo probability Metal Increase"
+	picture = "economic"
+	style = 2
+	action_a = {
+			name = "Great!"
+			command = { type = add_prov_resource which = -1 value = 5 where = metal }
+			command = { type = local_clrflag which = RILOWM }#Must Re-invest
+			command = { }
+	}
+}
+
+#########################################################################
+#  Lo probability Oil Increase
+#########################################################################
+event = {
+	id = 90006004
+	random = no
+	persistent = yes
+	date = { day = 1 month = january year = 1930 }
+	offset = 7
+	deathdate = { day = 1 month = january year = 1960 }
+	trigger = {
+		local_flag = RILOWO
+		random = 5
+	}
+	name = "Lo probability Oil Increase"
+	desc = "Lo probability Oil Increase"
+	picture = "economic"
+	style = 2
+	action_a = {
+			name = "Great!"
+			command = { type = add_prov_resource which = -1 value = 5 where = oil }
+			command = { type = local_clrflag which = RILOWO }#Must Re-invest
+			command = { }
+	}
+}
+
+#########################################################################
+#  Lo probability Rare Material Increase
+#########################################################################
+event = {
+	id = 90006005
+	random = no
+	persistent = yes
+	date = { day = 1 month = january year = 1930 }
+	offset = 7
+	deathdate = { day = 1 month = january year = 1960 }
+	trigger = {
+		local_flag = RILOWR
+		random = 5
+	}
+	name = "Lo probability Rare Material Increase"
+	desc = "Lo probability Rare Material Increase"
+	picture = "economic"
+	style = 2
+	action_a = {
+			name = "Great!"
+			command = { type = add_prov_resource which = -1 value = 2.5 where = rare_materials }
+			command = { type = local_clrflag which = RILOWR }#Must Re-invest
+			command = { }
+	}
+}
+
+#########################################################################
+#  Med probability Energy Increase
+#########################################################################
+event = {
+	id = 90006006
+	random = no
+	persistent = yes
+	date = { day = 1 month = january year = 1930 }
+	offset = 7
+	deathdate = { day = 1 month = january year = 1960 }
+	trigger = {
+		local_flag = RIMEDE
+		random = 25
+	}
+	name = "Med probability Energy Increase"
+	desc = "Med probability Energy Increase"
+	picture = "economic"
+	style = 2
+	action_a = {
+			name = "Great!"
+			command = { type = add_prov_resource which = -1 value = 10 where = energy }
+			command = { type = local_clrflag which = RIMEDE }#Must Re-invest
+			command = { }
+	}
+}
+
+#########################################################################
+#  Med probability Metal Increase
+#########################################################################
+event = {
+	id = 90006007
+	random = no
+	persistent = yes
+	date = { day = 1 month = january year = 1930 }
+	offset = 7
+	deathdate = { day = 1 month = january year = 1960 }
+	trigger = {
+		local_flag = RIMEDM
+		random = 25
+	}
+	name = "Med probability Metal Increase"
+	desc = "Med probability Metal Increase"
+	picture = "economic"
+	style = 2
+	action_a = {
+			name = "Great!"
+			command = { type = add_prov_resource which = -1 value = 5 where = metal }
+			command = { type = local_clrflag which = RIMEDM }#Must Re-invest
+			command = { }
+	}
+}
+
+#########################################################################
+#  Med probability Oil Increase
+#########################################################################
+event = {
+	id = 90006008
+	random = no
+	persistent = yes
+	date = { day = 1 month = january year = 1930 }
+	offset = 7
+	deathdate = { day = 1 month = january year = 1960 }
+	trigger = {
+		local_flag = RIMEDO
+		random = 25
+	}
+	name = "Med probability Oil Increase"
+	desc = "Med probability Oil Increase"
+	picture = "economic"
+	style = 2
+	action_a = {
+			name = "Great!"
+			command = { type = add_prov_resource which = -1 value = 5 where = oil }
+			command = { type = local_clrflag which = RIMEDO }#Must Re-invest
+			command = { }
+	}
+}
+
+#########################################################################
+#  Med probability Rare Material Increase
+#########################################################################
+event = {
+	id = 90006009
+	random = no
+	persistent = yes
+	date = { day = 1 month = january year = 1930 }
+	offset = 7
+	deathdate = { day = 1 month = january year = 1960 }
+	trigger = {
+		local_flag = RIMEDR
+		random = 25
+	}
+	name = "Med probability Rare Material Increase"
+	desc = "Med probability Rare Material Increase"
+	picture = "economic"
+	style = 2
+	action_a = {
+			name = "Great!"
+			command = { type = add_prov_resource which = -1 value = 2.5 where = rare_materials }
+			command = { type = local_clrflag which = RIMEDR }#Must Re-invest
+			command = { }
+	}
+}
+
+#########################################################################
+#  High probability Energy Increase
+#########################################################################
+event = {
+	id = 90006010
+	random = no
+	persistent = yes
+	date = { day = 1 month = january year = 1930 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1960 }
+	trigger = {
+		local_flag = RIHIE
+		random = 50
+	}
+	name = "High probability Energy Increase"
+	desc = "High probability Energy Increase"
+	picture = "economic"
+	style = 2
+	action_a = {
+			name = "Great!"
+			command = { type = local_clrflag which = RIHIE }#Must Re-invest
+			command = { type = add_prov_resource which = -1 value = 10 where = energy }
+			command = { }
+	}
+}
+
+#########################################################################
+#  High probability Metal Increase
+#########################################################################
+event = {
+	id = 90006011
+	random = no
+	persistent = yes
+	date = { day = 1 month = january year = 1930 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1960 }
+	trigger = {
+		local_flag = RIHIM
+		random = 50
+	}
+	name = "High probability Metal Increase"
+	desc = "High probability Metal Increase"
+	picture = "economic"
+	style = 2
+	action_a = {
+			name = "Great!"
+			command = { type = local_clrflag which = RIHIM }#Must Re-invest
+			command = { type = add_prov_resource which = -1 value = 5 where = metal }
+			command = { }
+	}
+}
+
+#########################################################################
+#  High probability Oil Increase
+#########################################################################
+event = {
+	id = 90006012
+	random = no
+	persistent = yes
+	date = { day = 1 month = january year = 1930 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1960 }
+	trigger = {
+		local_flag = RIHIO
+		random = 50
+	}
+	name = "High probability Oil Increase"
+	desc = "High probability Oil Increase"
+	picture = "economic"
+	style = 2
+	action_a = {
+			name = "Great!"
+			command = { type = local_clrflag which = RIHIO }#Must Re-invest
+			command = { type = add_prov_resource which = -1 value = 5 where = oil }
+			command = { }
+	}
+}
+
+#########################################################################
+#  High probability Rare Material Increase
+#########################################################################
+event = {
+	id = 90006013
+	random = no
+	persistent = yes
+	date = { day = 1 month = january year = 1930 }
+	offset = 10
+	deathdate = { day = 1 month = january year = 1960 }
+	trigger = {
+		local_flag = RIHIR
+		random = 50
+	}
+	name = "High probability Rare Material Increase"
+	desc = "High probability Rare Material Increase"
+	picture = "economic"
+	style = 2
+	action_a = {
+			name = "Great!"
+			command = { type = local_clrflag which = RIHIR }#Must Re-invest
+			command = { type = add_prov_resource which = -1 value = 2.5 where = rare_materials }
+			command = { }
+	}
+}

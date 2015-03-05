@@ -1,0 +1,227 @@
+#### Ersatz Conversion
+event = {
+	id = 90005000
+	random = no
+	persistent = yes
+
+	decision = { 
+		NOT = { local_flag = bla_keks }
+	}
+
+	#decision_trigger = {
+	#	#money = 500
+	#	energy = 20000
+	#	NOT = { rare_materials = 10000 }
+	#}
+
+	trigger = {
+		NOT = { local_flag = bla_keks }
+	}
+   
+	name = "Produktionsprioritaetenaenderung"
+	desc = "Das ist ein Test" 
+	style = 2
+	picture = "ersatz_conversion"
+	decision_picture = "decision_ersatz_conversion"
+
+	date = { day = 1 month = january year = 1933 }
+	offset = 120
+	deathdate = { day = 30 month = december year = 1950 }
+
+	action = {
+		name = "Land Prio aendern"
+		command = { type = event which = 90005001 where = -1 when = 1 }
+		command = { type = local_setflag which = bla_keks }
+	}
+	
+	action = {
+		name = "Flugzeug Prio aendern"
+		command = { type = event which = 90005002 where = -1 when = 1 }
+		command = { type = local_setflag which = bla_keks }
+	}
+	
+	action = {
+		name = "Flotten Prio aendern"
+		command = { type = event which = 90005003 where = -1 when = 1 }
+		command = { type = local_setflag which = bla_keks }
+	}
+	
+	#action = {
+	#	name = "Infra Prio aendern"
+	#
+		#command = { type = event which = 9000499 where = -1 when = 1 }
+	#	command = { type = local_setflag which = bla_keks }
+	#}
+	
+}
+event = {
+	id = 90005001
+	random = no
+	persistent = yes
+
+	name = "Landproduktions Controller"
+	desc = "Keks" 
+	style = 2
+	picture = "ersatz_conversion"
+
+	action = {
+		name = "Produktion um 25% erhoehen"
+		command = { type = build_time which = land where = relative value = -25 }
+		command = { type = build_cost which = land where = relative value = 25 }
+		command = { type = local_clrflag which = bla_keks }
+	}
+	
+	action = {
+		name = "Produktion um 10% erhoehen"
+		command = { type = build_time which = land where = relative value = -10 }
+		command = { type = build_cost which = land where = relative value = 10 }
+		command = { type = local_clrflag which = bla_keks }
+	}
+	
+	action = {
+		name = "Produktion um 10% vermindern"
+		command = { type = build_time which = land where = relative value = 10 }
+		command = { type = build_cost which = land where = relative value = -10 }
+		command = { type = local_clrflag which = bla_keks }
+	}
+	
+	action = {
+		name = "Produktion um 25% vermindern"
+		command = { type = build_time which = land where = relative value = 25 }
+		command = { type = build_cost which = land where = relative value = -25 }
+		command = { type = local_clrflag which = bla_keks }
+	}
+	
+}
+
+event = {
+	id = 90005002
+	random = no
+	persistent = yes
+
+	name = "Luftproduktion Controller"
+	desc = "Keks" 
+	style = 2
+	picture = "ersatz_conversion"
+
+	action = {
+		name = "Produktion um 25% erhoehen"
+		command = { type = build_time which = air where = relative value = -25 }
+		command = { type = build_cost which = air where = relative value = 25 }
+		command = { type = local_clrflag which = bla_keks }
+	}
+	
+	action = {
+		name = "Produktion um 10% erhoehen"
+		command = { type = build_time which = air where = relative value = -10 }
+		command = { type = build_cost which = air where = relative value = 10 }
+		command = { type = local_clrflag which = bla_keks }
+	}
+	
+	action = {
+		name = "Produktion um 10% vermindern"
+		command = { type = build_time which = air where = relative value = 10 }
+		command = { type = build_cost which = air where = relative value = -10 }
+		command = { type = local_clrflag which = bla_keks }
+	}
+	
+	action = {
+		name = "Produktion um 25% vermindern"
+		command = { type = build_time which = air where = relative value = 25 }
+		command = { type = build_cost which = air where = relative value = -25 }
+		command = { type = local_clrflag which = bla_keks }
+	}
+	
+}
+
+event = {
+	id = 90005003
+	random = no
+	persistent = yes
+
+	name = "Schiffproduktion Controller"
+	desc = "Keks" 
+	style = 2
+	picture = "ersatz_conversion"
+
+	action = {
+		name = "Produktion um 25% erhoehen"
+		command = { type = build_time which = naval where = relative value = -25 }
+		command = { type = build_cost which = naval where = relative value = 25 }
+		command = { type = local_clrflag which = bla_keks }
+	}
+	
+	action = {
+		name = "Produktion um 10% erhoehen"
+		command = { type = build_time which = naval where = relative value = -10 }
+		command = { type = build_cost which = naval where = relative value = 10 }
+		command = { type = local_clrflag which = bla_keks }
+	}
+	
+	action = {
+		name = "Produktion um 10% vermindern"
+		command = { type = build_time which = naval where = relative value = 10 }
+		command = { type = build_cost which = naval where = relative value = -10 }
+		command = { type = local_clrflag which = bla_keks }
+	}
+	
+	action = {
+		name = "Produktion um 25% vermindern"
+		command = { type = build_time which = naval where = relative value = 25 }
+		command = { type = build_cost which = naval where = relative value = -25 }
+		command = { type = local_clrflag which = bla_keks }
+	}
+	
+}
+
+###############
+# Force Dutch Surrender
+event = {
+	id = 90005012
+	random = no
+	country = GER
+
+	decision = { 
+		#event = 2003045 # Fall Gelb
+		#war = { country = GER country = HOL } 
+		NOT = { event = 2004001 } # Dutch Capitulation
+		#NOT = {	control = { province = 125 data = GER } } #Rotterdam
+		
+	}
+
+	decision_trigger = {
+		#NOT = { building = { province = 125 type = infrastructure value = 0.9 when = now } } # Rotterdam
+		#OR = {
+		#	control = { province = 118 data = GER } #Eindhoven
+		#	control = { province = 119 data = GER } #Arnhem
+		#	control = { province = 120 data = GER } #Nijmegen
+		#	control = { province = 121 data = GER } #Maastricht
+		#	control = { province = 122 data = GER } #Amsterdam
+		#	control = { province = 124 data = GER } #Groningen
+		#	control = { province = 123 data = GER } # Middelburg
+		#}
+	}
+
+	trigger = { 
+		#event = 2003045 # Fall Gelb
+		#war = { country = GER country = HOL } 
+		NOT = { event = 2004001 } # Dutch Capitulation 
+		#NOT = { building = { province = 125 type = infrastructure value = 0.9 when = now } } # Rotterdam
+		#NOT = {	control = { province = 125 data = GER } } #Rotterdam
+	}
+   
+	name = "9300012name"
+	desc = "9300012desc" 
+	style = 2
+	picture = "Bombing_Rotterdam"
+	decision_picture = "decision_rotterdam"
+
+	date = { day = 1 month = january year = 1933 }
+	offset = 60
+	deathdate = { day = 29 month = december year = 1999 }
+
+	action = {
+		name = ACTION_NAME_GREAT
+		command = { type = trigger which = 2004001 } # Dutch Capitulation
+	}
+}

@@ -798,3 +798,19 @@ d_09 = {
 	value		= 0.5
 	list_prio	= 100
 }
+
+d_10 = {
+	#ID			50
+	type		= garrison
+	name		= "Geologe"
+	short_name	= "Geol"
+	desc		= "Geologe zum suchen nach neuen Resoucen"
+	short_desc	= "Zur res suche"
+	eyr			= 13
+	sprite		= garrison
+	transmute	= militia
+	gfx_prio	= 2
+	value		= 0.65
+	list_prio	= 1
+	production	=yes
+}

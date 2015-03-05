@@ -31,6 +31,10 @@ event = "db\events\AI\AI_revolters.txt"
 event = "db\events\AI\AI_mobi.txt"
 event = "db\events\AI\AI_research.txt"
 
+# DaTo
+event = "db\events\DaTo\DaTo.txt"
+event = "db\events\DaTo\ResourceInvest.txt"
+
 # Mods placeholder
 
 event = "db\events\Mods.txt"
